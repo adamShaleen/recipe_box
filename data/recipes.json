@@ -1,0 +1,340 @@
+[
+  {
+    "id": "chicken-parmesan",
+    "name": "Chicken Parmesan",
+    "description": "Classic Italian-American breaded chicken with marinara and melted mozzarella.",
+    "cuisine": "italian",
+    "protein": "chicken",
+    "tags": ["comfort-food", "baked", "cheese"],
+    "servings": 4,
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 30,
+    "ingredients": [
+      {
+        "id": "ing-cp-001",
+        "name": "chicken breast",
+        "amount": 4,
+        "unit": "pieces",
+        "category": "protein",
+        "swappable": true
+      },
+      {
+        "id": "ing-cp-002",
+        "name": "breadcrumbs",
+        "amount": 1,
+        "unit": "cup",
+        "category": "pantry",
+        "swappable": true
+      },
+      {
+        "id": "ing-cp-003",
+        "name": "marinara sauce",
+        "amount": 2,
+        "unit": "cups",
+        "category": "pantry",
+        "swappable": true
+      },
+      {
+        "id": "ing-cp-004",
+        "name": "mozzarella cheese",
+        "amount": 1.5,
+        "unit": "cups",
+        "category": "dairy",
+        "swappable": true
+      },
+      {
+        "id": "ing-cp-005",
+        "name": "parmesan cheese",
+        "amount": 0.5,
+        "unit": "cup",
+        "category": "dairy",
+        "swappable": false
+      },
+      {
+        "id": "ing-cp-006",
+        "name": "eggs",
+        "amount": 2,
+        "unit": "pieces",
+        "category": "protein",
+        "swappable": false
+      },
+      {
+        "id": "ing-cp-007",
+        "name": "olive oil",
+        "amount": 3,
+        "unit": "tablespoons",
+        "category": "pantry",
+        "swappable": true
+      },
+      {
+        "id": "ing-cp-008",
+        "name": "garlic powder",
+        "amount": 1,
+        "unit": "teaspoon",
+        "category": "seasoning",
+        "swappable": false
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Preheat oven to 425°F.",
+        "durationMinutes": 10
+      },
+      {
+        "order": 2,
+        "instruction": "Pound chicken breasts to even thickness. Season with salt, pepper, and garlic powder.",
+        "durationMinutes": 5
+      },
+      {
+        "order": 3,
+        "instruction": "Dip each breast in beaten egg, then coat in breadcrumbs. Press gently to adhere.",
+        "durationMinutes": 5
+      },
+      {
+        "order": 4,
+        "instruction": "Heat olive oil in an oven-safe skillet over medium-high. Sear chicken 3 minutes per side until golden.",
+        "durationMinutes": 6
+      },
+      {
+        "order": 5,
+        "instruction": "Top each breast with marinara sauce, mozzarella, and parmesan.",
+        "durationMinutes": 2
+      },
+      {
+        "order": 6,
+        "instruction": "Bake 15–18 minutes until cheese is bubbling and chicken reaches 165°F internally.",
+        "durationMinutes": 18
+      }
+    ]
+  },
+  {
+    "id": "thai-green-curry",
+    "name": "Thai Green Curry",
+    "description": "Fragrant and creamy Thai green curry with chicken, vegetables, and jasmine rice.",
+    "cuisine": "thai",
+    "protein": "chicken",
+    "tags": ["spicy", "creamy", "aromatic"],
+    "servings": 4,
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 25,
+    "ingredients": [
+      {
+        "id": "ing-tgc-001",
+        "name": "chicken thighs",
+        "amount": 600,
+        "unit": "grams",
+        "category": "protein",
+        "swappable": true
+      },
+      {
+        "id": "ing-tgc-002",
+        "name": "coconut milk",
+        "amount": 400,
+        "unit": "ml",
+        "category": "dairy",
+        "swappable": true
+      },
+      {
+        "id": "ing-tgc-003",
+        "name": "green curry paste",
+        "amount": 3,
+        "unit": "tablespoons",
+        "category": "pantry",
+        "swappable": false
+      },
+      {
+        "id": "ing-tgc-004",
+        "name": "zucchini",
+        "amount": 2,
+        "unit": "medium",
+        "category": "produce",
+        "swappable": true
+      },
+      {
+        "id": "ing-tgc-005",
+        "name": "red bell pepper",
+        "amount": 1,
+        "unit": "large",
+        "category": "produce",
+        "swappable": true
+      },
+      {
+        "id": "ing-tgc-006",
+        "name": "jasmine rice",
+        "amount": 2,
+        "unit": "cups",
+        "category": "pantry",
+        "swappable": true
+      },
+      {
+        "id": "ing-tgc-007",
+        "name": "fish sauce",
+        "amount": 2,
+        "unit": "tablespoons",
+        "category": "pantry",
+        "swappable": true
+      },
+      {
+        "id": "ing-tgc-008",
+        "name": "lime juice",
+        "amount": 2,
+        "unit": "tablespoons",
+        "category": "produce",
+        "swappable": false
+      },
+      {
+        "id": "ing-tgc-009",
+        "name": "fresh basil",
+        "amount": 0.5,
+        "unit": "cup",
+        "category": "produce",
+        "swappable": false
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Cook jasmine rice per package directions.",
+        "durationMinutes": 18
+      },
+      {
+        "order": 2,
+        "instruction": "Cut chicken into bite-sized pieces. Slice zucchini and bell pepper.",
+        "durationMinutes": 5
+      },
+      {
+        "order": 3,
+        "instruction": "Heat a splash of coconut milk in a wok over medium-high. Add curry paste and fry 1 minute until fragrant.",
+        "durationMinutes": 2
+      },
+      {
+        "order": 4,
+        "instruction": "Add chicken and stir to coat in paste. Cook 3–4 minutes until mostly cooked through.",
+        "durationMinutes": 4
+      },
+      {
+        "order": 5,
+        "instruction": "Pour in remaining coconut milk. Add vegetables and fish sauce. Simmer 8–10 minutes.",
+        "durationMinutes": 10
+      },
+      {
+        "order": 6,
+        "instruction": "Finish with lime juice and fresh basil. Serve over rice.",
+        "durationMinutes": 2
+      }
+    ]
+  },
+  {
+    "id": "black-bean-tacos",
+    "name": "Black Bean Tacos",
+    "description": "Smoky, spiced black bean tacos with pickled red onion, avocado, and lime.",
+    "cuisine": "mexican",
+    "protein": "beans",
+    "tags": ["vegan", "quick", "spicy"],
+    "servings": 4,
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 15,
+    "ingredients": [
+      {
+        "id": "ing-bbt-001",
+        "name": "black beans",
+        "amount": 2,
+        "unit": "cans (15 oz)",
+        "category": "protein",
+        "swappable": true
+      },
+      {
+        "id": "ing-bbt-002",
+        "name": "corn tortillas",
+        "amount": 12,
+        "unit": "pieces",
+        "category": "pantry",
+        "swappable": true
+      },
+      {
+        "id": "ing-bbt-003",
+        "name": "avocado",
+        "amount": 2,
+        "unit": "large",
+        "category": "produce",
+        "swappable": false
+      },
+      {
+        "id": "ing-bbt-004",
+        "name": "red onion",
+        "amount": 1,
+        "unit": "medium",
+        "category": "produce",
+        "swappable": true
+      },
+      {
+        "id": "ing-bbt-005",
+        "name": "lime juice",
+        "amount": 3,
+        "unit": "tablespoons",
+        "category": "produce",
+        "swappable": false
+      },
+      {
+        "id": "ing-bbt-006",
+        "name": "smoked paprika",
+        "amount": 1,
+        "unit": "teaspoon",
+        "category": "seasoning",
+        "swappable": false
+      },
+      {
+        "id": "ing-bbt-007",
+        "name": "cumin",
+        "amount": 1,
+        "unit": "teaspoon",
+        "category": "seasoning",
+        "swappable": false
+      },
+      {
+        "id": "ing-bbt-008",
+        "name": "chipotle powder",
+        "amount": 0.5,
+        "unit": "teaspoon",
+        "category": "seasoning",
+        "swappable": true
+      },
+      {
+        "id": "ing-bbt-009",
+        "name": "fresh cilantro",
+        "amount": 0.25,
+        "unit": "cup",
+        "category": "produce",
+        "swappable": true
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Thinly slice half the red onion. Toss with 2 tablespoons lime juice and a pinch of salt. Set aside to quick-pickle.",
+        "durationMinutes": 2
+      },
+      {
+        "order": 2,
+        "instruction": "Drain and rinse black beans. Heat in a skillet with smoked paprika, cumin, chipotle powder, salt, and a splash of water. Mash lightly.",
+        "durationMinutes": 7
+      },
+      {
+        "order": 3,
+        "instruction": "Warm tortillas directly over a gas flame or dry skillet, 30 seconds per side.",
+        "durationMinutes": 3
+      },
+      {
+        "order": 4,
+        "instruction": "Mash avocado with remaining lime juice and salt.",
+        "durationMinutes": 2
+      },
+      {
+        "order": 5,
+        "instruction": "Assemble tacos: spread avocado, top with black beans, pickled onion, and cilantro.",
+        "durationMinutes": 3
+      }
+    ]
+  }
+]

@@ -1,0 +1,40 @@
+# Claude
+CLAUDE.md
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+cdk.out/
+*.js.map
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Vercel
+.vercel/
+
+# CDK
+cdk.context.json
+
+# Test coverage
+coverage/
