@@ -9,6 +9,7 @@ export const CUISINE_TYPES = [
   'mediterranean',
   'chinese',
   'greek',
+  'vietnamese'
 ] as const;
 
 export type CuisineType = (typeof CUISINE_TYPES)[number];
@@ -21,7 +22,7 @@ export const DIETARY_FILTERS = [
   'dairy-free',
   'paleo',
   'whole30',
-  'low-carb',
+  'low-carb'
 ] as const;
 
 export type DietaryFilter = (typeof DIETARY_FILTERS)[number];
@@ -37,6 +38,7 @@ export const PROTEIN_TYPES = [
   'turkey',
   'eggs',
   'beans',
+  'none'
 ] as const;
 
 export type ProteinType = (typeof PROTEIN_TYPES)[number];

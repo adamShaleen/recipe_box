@@ -5,6 +5,7 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
+    "test:file": "jest --testPathPattern",
     "lint": "eslint bin lib",
     "format:check": "prettier --check bin lib",
     "format": "prettier --write bin lib",

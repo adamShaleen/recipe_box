@@ -8,12 +8,12 @@ export class DatabaseConstruct extends Construct {
   constructor(scope: Construct, id: string) {
     super(scope, id);
 
-    this.table = new dynamodb.Table(this, 'RecipesTable', {
-      tableName: 'recipe-box-recipes',
+    this.table = new dynamodb.Table(this, 'Recipes', {
+      tableName: 'recipes',
       partitionKey: { name: 'PK', type: dynamodb.AttributeType.STRING },
       sortKey: { name: 'SK', type: dynamodb.AttributeType.STRING },
       billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
-      removalPolicy: cdk.RemovalPolicy.RETAIN,
+      removalPolicy: cdk.RemovalPolicy.RETAIN
     });
   }
 }

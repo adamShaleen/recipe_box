@@ -1,339 +1,609 @@
 [
   {
-    "id": "chicken-parmesan",
-    "name": "Chicken Parmesan",
-    "description": "Classic Italian-American breaded chicken with marinara and melted mozzarella.",
-    "cuisine": "italian",
-    "protein": "chicken",
-    "tags": ["comfort-food", "baked", "cheese"],
-    "servings": 4,
-    "prepTimeMinutes": 20,
-    "cookTimeMinutes": 30,
-    "ingredients": [
-      {
-        "id": "ing-cp-001",
-        "name": "chicken breast",
-        "amount": 4,
-        "unit": "pieces",
-        "category": "protein",
-        "swappable": true
-      },
-      {
-        "id": "ing-cp-002",
-        "name": "breadcrumbs",
-        "amount": 1,
-        "unit": "cup",
-        "category": "pantry",
-        "swappable": true
-      },
-      {
-        "id": "ing-cp-003",
-        "name": "marinara sauce",
-        "amount": 2,
-        "unit": "cups",
-        "category": "pantry",
-        "swappable": true
-      },
-      {
-        "id": "ing-cp-004",
-        "name": "mozzarella cheese",
-        "amount": 1.5,
-        "unit": "cups",
-        "category": "dairy",
-        "swappable": true
-      },
-      {
-        "id": "ing-cp-005",
-        "name": "parmesan cheese",
-        "amount": 0.5,
-        "unit": "cup",
-        "category": "dairy",
-        "swappable": false
-      },
-      {
-        "id": "ing-cp-006",
-        "name": "eggs",
-        "amount": 2,
-        "unit": "pieces",
-        "category": "protein",
-        "swappable": false
-      },
-      {
-        "id": "ing-cp-007",
-        "name": "olive oil",
-        "amount": 3,
-        "unit": "tablespoons",
-        "category": "pantry",
-        "swappable": true
-      },
-      {
-        "id": "ing-cp-008",
-        "name": "garlic powder",
-        "amount": 1,
-        "unit": "teaspoon",
-        "category": "seasoning",
-        "swappable": false
-      }
-    ],
-    "steps": [
-      {
-        "order": 1,
-        "instruction": "Preheat oven to 425°F.",
-        "durationMinutes": 10
-      },
-      {
-        "order": 2,
-        "instruction": "Pound chicken breasts to even thickness. Season with salt, pepper, and garlic powder.",
-        "durationMinutes": 5
-      },
-      {
-        "order": 3,
-        "instruction": "Dip each breast in beaten egg, then coat in breadcrumbs. Press gently to adhere.",
-        "durationMinutes": 5
-      },
-      {
-        "order": 4,
-        "instruction": "Heat olive oil in an oven-safe skillet over medium-high. Sear chicken 3 minutes per side until golden.",
-        "durationMinutes": 6
-      },
-      {
-        "order": 5,
-        "instruction": "Top each breast with marinara sauce, mozzarella, and parmesan.",
-        "durationMinutes": 2
-      },
-      {
-        "order": 6,
-        "instruction": "Bake 15–18 minutes until cheese is bubbling and chicken reaches 165°F internally.",
-        "durationMinutes": 18
-      }
-    ]
-  },
-  {
-    "id": "thai-green-curry",
-    "name": "Thai Green Curry",
-    "description": "Fragrant and creamy Thai green curry with chicken, vegetables, and jasmine rice.",
-    "cuisine": "thai",
-    "protein": "chicken",
-    "tags": ["spicy", "creamy", "aromatic"],
+    "id": "mediterranean-veggie-sheet-pan",
+    "name": "Mediterranean veggie sheet pan",
+    "description": "Easy, cheap, and well balanced dinner that always satisfies",
+    "cuisine": "mediterranean",
+    "protein": "none",
+    "tags": ["vegetarian", "easy"],
     "servings": 4,
     "prepTimeMinutes": 15,
     "cookTimeMinutes": 25,
     "ingredients": [
       {
-        "id": "ing-tgc-001",
-        "name": "chicken thighs",
-        "amount": 600,
-        "unit": "grams",
-        "category": "protein",
-        "swappable": true
-      },
-      {
-        "id": "ing-tgc-002",
-        "name": "coconut milk",
-        "amount": 400,
-        "unit": "ml",
-        "category": "dairy",
-        "swappable": true
-      },
-      {
-        "id": "ing-tgc-003",
-        "name": "green curry paste",
-        "amount": 3,
-        "unit": "tablespoons",
-        "category": "pantry",
-        "swappable": false
-      },
-      {
-        "id": "ing-tgc-004",
+        "id": "zucchini",
         "name": "zucchini",
-        "amount": 2,
-        "unit": "medium",
-        "category": "produce",
-        "swappable": true
-      },
-      {
-        "id": "ing-tgc-005",
-        "name": "red bell pepper",
         "amount": 1,
-        "unit": "large",
-        "category": "produce",
-        "swappable": true
+        "unit": "zucchini",
+        "category": "produce"
       },
       {
-        "id": "ing-tgc-006",
-        "name": "jasmine rice",
-        "amount": 2,
-        "unit": "cups",
-        "category": "pantry",
-        "swappable": true
+        "id": "cherry-tomato",
+        "name": "cherry tomato",
+        "amount": 1,
+        "unit": "cup",
+        "category": "produce"
       },
       {
-        "id": "ing-tgc-007",
-        "name": "fish sauce",
-        "amount": 2,
-        "unit": "tablespoons",
-        "category": "pantry",
-        "swappable": true
+        "id": "bell-pepper",
+        "name": "bell pepper",
+        "amount": 1,
+        "unit": "pepper",
+        "category": "produce"
       },
       {
-        "id": "ing-tgc-008",
-        "name": "lime juice",
-        "amount": 2,
-        "unit": "tablespoons",
-        "category": "produce",
-        "swappable": false
+        "id": "black-olive",
+        "name": "black olive",
+        "amount": 1,
+        "unit": "cup",
+        "category": "pantry"
       },
       {
-        "id": "ing-tgc-009",
-        "name": "fresh basil",
+        "id": "feta-cheese",
+        "name": "feta cheese",
         "amount": 0.5,
         "unit": "cup",
-        "category": "produce",
-        "swappable": false
+        "category": "dairy"
+      },
+      {
+        "id": "olive-oil",
+        "name": "olive oil",
+        "amount": 0.25,
+        "unit": "cup",
+        "category": "pantry"
+      },
+      {
+        "id": "oregano",
+        "name": "oregano",
+        "amount": 1,
+        "unit": "tablespoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "salt",
+        "name": "salt",
+        "amount": 1,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "black-pepper",
+        "name": "black pepper",
+        "amount": 1,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "quinoa",
+        "name": "quinoa",
+        "amount": 1,
+        "unit": "cup",
+        "category": "pantry"
+      },
+      {
+        "id": "lemon",
+        "name": "lemon",
+        "amount": 1,
+        "unit": "tablespoon",
+        "category": "produce"
       }
     ],
     "steps": [
       {
         "order": 1,
-        "instruction": "Cook jasmine rice per package directions.",
-        "durationMinutes": 18
-      },
-      {
-        "order": 2,
-        "instruction": "Cut chicken into bite-sized pieces. Slice zucchini and bell pepper.",
+        "instruction": "chop veggies",
         "durationMinutes": 5
       },
       {
+        "order": 2,
+        "instruction": "toss veggies in olive oil, salt, pepper, and half lemon juice",
+        "durationMinutes": 2
+      },
+      {
         "order": 3,
-        "instruction": "Heat a splash of coconut milk in a wok over medium-high. Add curry paste and fry 1 minute until fragrant.",
+        "instruction": "spread veggies evenly onto parchment paper covered sheet pan",
         "durationMinutes": 2
       },
       {
         "order": 4,
-        "instruction": "Add chicken and stir to coat in paste. Cook 3–4 minutes until mostly cooked through.",
-        "durationMinutes": 4
+        "instruction": "roast veggies in oven at 425 degrees",
+        "durationMinutes": 25
       },
       {
         "order": 5,
-        "instruction": "Pour in remaining coconut milk. Add vegetables and fish sauce. Simmer 8–10 minutes.",
+        "instruction": "cover quinoa with water and bring to boil",
         "durationMinutes": 10
       },
       {
         "order": 6,
-        "instruction": "Finish with lime juice and fresh basil. Serve over rice.",
+        "instruction": "reduce quinoa to simmer and cover",
+        "durationMinutes": 15
+      },
+      {
+        "order": 7,
+        "instruction": "construct bowl - quinoa base, veggies, then top with remaining lemon, feta, and black olives",
         "durationMinutes": 2
       }
     ]
   },
   {
-    "id": "black-bean-tacos",
-    "name": "Black Bean Tacos",
-    "description": "Smoky, spiced black bean tacos with pickled red onion, avocado, and lime.",
-    "cuisine": "mexican",
-    "protein": "beans",
-    "tags": ["vegan", "quick", "spicy"],
+    "id": "chicken-shawarma-casserole",
+    "name": "Chicken Shawarma Casserole",
+    "description": "Takes a little more effort but worth it",
+    "cuisine": "mediterranean",
+    "protein": "chicken",
+    "tags": ["low-fodmap"],
     "servings": 4,
-    "prepTimeMinutes": 10,
-    "cookTimeMinutes": 15,
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 45,
     "ingredients": [
       {
-        "id": "ing-bbt-001",
-        "name": "black beans",
+        "id": "lemon",
+        "name": "lemon",
+        "amount": 1,
+        "unit": "tablespoon",
+        "category": "produce"
+      },
+      {
+        "id": "olive-oil",
+        "name": "olive oil",
+        "amount": 0.3,
+        "unit": "cup",
+        "category": "pantry"
+      },
+      {
+        "id": "cumin",
+        "name:": "cumin",
         "amount": 2,
-        "unit": "cans (15 oz)",
-        "category": "protein",
-        "swappable": true
+        "unit": "teaspoon",
+        "category": "seasoning"
       },
       {
-        "id": "ing-bbt-002",
-        "name": "corn tortillas",
-        "amount": 12,
-        "unit": "pieces",
-        "category": "pantry",
-        "swappable": true
-      },
-      {
-        "id": "ing-bbt-003",
-        "name": "avocado",
+        "id": "paprika",
+        "name:": "paprika",
         "amount": 2,
-        "unit": "large",
-        "category": "produce",
-        "swappable": false
-      },
-      {
-        "id": "ing-bbt-004",
-        "name": "red onion",
-        "amount": 1,
-        "unit": "medium",
-        "category": "produce",
-        "swappable": true
-      },
-      {
-        "id": "ing-bbt-005",
-        "name": "lime juice",
-        "amount": 3,
-        "unit": "tablespoons",
-        "category": "produce",
-        "swappable": false
-      },
-      {
-        "id": "ing-bbt-006",
-        "name": "smoked paprika",
-        "amount": 1,
         "unit": "teaspoon",
-        "category": "seasoning",
-        "swappable": false
+        "category": "seasoning"
       },
       {
-        "id": "ing-bbt-007",
-        "name": "cumin",
-        "amount": 1,
-        "unit": "teaspoon",
-        "category": "seasoning",
-        "swappable": false
-      },
-      {
-        "id": "ing-bbt-008",
-        "name": "chipotle powder",
+        "id": "turmeric",
+        "name:": "turmeric",
         "amount": 0.5,
         "unit": "teaspoon",
-        "category": "seasoning",
-        "swappable": true
+        "category": "seasoning"
       },
       {
-        "id": "ing-bbt-009",
-        "name": "fresh cilantro",
+        "id": "cinnamon",
+        "name:": "cinnamon",
+        "amount": 0.25,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "salt",
+        "name": "salt",
+        "amount": 1,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "red-pepper",
+        "name": "red pepper",
+        "amount": 0.5,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "chicken",
+        "name": "chicken",
+        "amount": 1,
+        "unit": "pound",
+        "category": "protein"
+      },
+      {
+        "id": "zucchini",
+        "name": "zucchini",
+        "amount": 1,
+        "unit": "zucchini",
+        "category": "produce"
+      },
+      {
+        "id": "arborio-rice",
+        "name": "arborio rice",
+        "amount": 1.25,
+        "unit": "cup",
+        "category": "pantry"
+      },
+      {
+        "id": "chicken-stock",
+        "name": "chicken stock",
+        "amount": 2,
+        "unit": "cup",
+        "category": "pantry"
+      },
+      {
+        "id": "parsley",
+        "name": "parsley",
         "amount": 0.25,
         "unit": "cup",
-        "category": "produce",
-        "swappable": true
+        "category": "produce"
+      },
+      {
+        "id": "cucumber",
+        "name": "cucumber",
+        "amount": 2,
+        "unit": "cup",
+        "category": "produce"
+      },
+      {
+        "id": "cherry-tomato",
+        "name": "cherry tomato",
+        "amount": 1,
+        "unit": "cup",
+        "category": "produce"
+      },
+      {
+        "id": "greek-yogurt",
+        "name": "greek yogurt",
+        "amount": 3,
+        "unit": "tablespoon",
+        "category": "dairy"
+      },
+      {
+        "id": "mayonnaise",
+        "name": "mayonnaise",
+        "amount": 3,
+        "unit": "tablespoon",
+        "category": "dairy"
+      },
+      {
+        "id": "white-vinegar",
+        "name": "white vinegar",
+        "amount": 1,
+        "unit": "tablespoon",
+        "category": "pantry"
       }
     ],
     "steps": [
       {
         "order": 1,
-        "instruction": "Thinly slice half the red onion. Toss with 2 tablespoons lime juice and a pinch of salt. Set aside to quick-pickle.",
-        "durationMinutes": 2
+        "instruction": "combine lemon juice, olive oil, salt, cumin, paprika, cinnamon, and red pepper in a large bowl. Toss chicken. Marinate for at least 30 minutes",
+        "durationMinutes": 30
       },
       {
         "order": 2,
-        "instruction": "Drain and rinse black beans. Heat in a skillet with smoked paprika, cumin, chipotle powder, salt, and a splash of water. Mash lightly.",
-        "durationMinutes": 7
+        "instruction": "preheat oven to 400",
+        "durationMinutes": 1
       },
       {
         "order": 3,
-        "instruction": "Warm tortillas directly over a gas flame or dry skillet, 30 seconds per side.",
-        "durationMinutes": 3
+        "instruction": "remove chicken from marinade and set aside. add zucchini, rice, chicken stock, and half the parsely to the marinade and mix. transfer to 15 inch pan and add the chicken.",
+        "durationMinutes": 5
       },
       {
         "order": 4,
-        "instruction": "Mash avocado with remaining lime juice and salt.",
-        "durationMinutes": 2
+        "instruction": "bake",
+        "durationMinutes": 45
       },
       {
         "order": 5,
-        "instruction": "Assemble tacos: spread avocado, top with black beans, pickled onion, and cilantro.",
+        "instruction": "prep topping - toss cucumber and tomatoes with olive oil, salt, and lemon",
+        "durationMinutes": 5
+      },
+      {
+        "order": 6,
+        "instruction": "prep sauce - combine yogurt, mayo, and lemon",
+        "durationMinutes": 5
+      },
+      {
+        "order": 7,
+        "instruction": "remove from oven and combine with toppings and serve",
+        "durationMinutes": 2
+      }
+    ]
+  },
+  {
+    "id": "whole30-fish-taco-bowls",
+    "name": "Whole30 Fish Taco Bowls",
+    "description": "Pan-seared chili-rubbed tilapia over coconut-lime cauliflower rice topped with fresh mango salsa, guacamole, red cabbage slaw, and chipotle aioli",
+    "cuisine": "mexican",
+    "protein": "fish",
+    "tags": ["whole30", "paleo", "dairy-free", "gluten-free"],
+    "servings": 4,
+    "prepTimeMinutes": 25,
+    "cookTimeMinutes": 15,
+    "ingredients": [
+      {
+        "id": "tilapia-fillets",
+        "name": "tilapia fillets",
+        "amount": 1,
+        "unit": "pound",
+        "category": "protein"
+      },
+      {
+        "id": "chili-powder",
+        "name": "chili powder",
+        "amount": 1,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "smoked-paprika",
+        "name": "smoked paprika",
+        "amount": 0.5,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "garlic-powder",
+        "name": "garlic powder",
+        "amount": 0.5,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "onion-powder",
+        "name": "onion powder",
+        "amount": 0.5,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "cumin",
+        "name": "cumin",
+        "amount": 0.25,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "salt",
+        "name": "salt",
+        "amount": 1,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "coconut-oil",
+        "name": "coconut oil",
+        "amount": 1,
+        "unit": "tablespoon",
+        "category": "pantry"
+      },
+      {
+        "id": "cauliflower",
+        "name": "cauliflower",
+        "amount": 1,
+        "unit": "head",
+        "category": "produce"
+      },
+      {
+        "id": "coconut-milk",
+        "name": "full-fat coconut milk",
+        "amount": 1,
+        "unit": "cup",
+        "category": "pantry"
+      },
+      {
+        "id": "lime",
+        "name": "lime",
+        "amount": 2,
+        "unit": "lime",
+        "category": "produce"
+      },
+      {
+        "id": "mango",
+        "name": "mango",
+        "amount": 1,
+        "unit": "mango",
+        "category": "produce"
+      },
+      {
+        "id": "red-onion",
+        "name": "red onion",
+        "amount": 0.5,
+        "unit": "cup",
+        "category": "produce"
+      },
+      {
+        "id": "cilantro",
+        "name": "cilantro",
+        "amount": 0.25,
+        "unit": "cup",
+        "category": "produce"
+      },
+      {
+        "id": "avocado",
+        "name": "avocado",
+        "amount": 2,
+        "unit": "avocado",
+        "category": "produce"
+      },
+      {
+        "id": "red-cabbage",
+        "name": "red cabbage",
+        "amount": 2,
+        "unit": "cup",
+        "category": "produce"
+      },
+      {
+        "id": "whole30-mayonnaise",
+        "name": "whole30 mayonnaise",
+        "amount": 0.25,
+        "unit": "cup",
+        "category": "pantry"
+      },
+      {
+        "id": "chipotle-pepper-powder",
+        "name": "chipotle pepper powder",
+        "amount": 1,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "combine chili powder, smoked paprika, garlic powder, onion powder, cumin, and salt in a small bowl. rub generously over both sides of the tilapia fillets.",
         "durationMinutes": 3
+      },
+      {
+        "order": 2,
+        "instruction": "heat coconut oil in a skillet over medium heat. cook fish 3-4 minutes per side until it flakes easily. remove from heat.",
+        "durationMinutes": 8
+      },
+      {
+        "order": 3,
+        "instruction": "pulse cauliflower florets in a food processor until it resembles rice. add to a saucepan with coconut milk and juice of 1 lime. cook over medium heat until liquid is mostly evaporated and cauliflower is tender, about 7-10 minutes.",
+        "durationMinutes": 12
+      },
+      {
+        "order": 4,
+        "instruction": "make mango salsa: combine diced mango, half the red onion, half the cilantro, and juice of half a lime. toss and set aside.",
+        "durationMinutes": 5
+      },
+      {
+        "order": 5,
+        "instruction": "make guacamole: mash avocados and mix with remaining red onion, remaining cilantro, and remaining lime juice. season with salt to taste.",
+        "durationMinutes": 5
+      },
+      {
+        "order": 6,
+        "instruction": "make chipotle aioli: whisk together mayonnaise, chipotle pepper powder, and 1 tablespoon coconut milk until smooth.",
+        "durationMinutes": 2
+      },
+      {
+        "order": 7,
+        "instruction": "assemble bowls: spoon cauliflower rice into each bowl. add a portion of shredded red cabbage, then top with fish, guacamole, and mango salsa. drizzle chipotle aioli over the top. serve immediately.",
+        "durationMinutes": 3
+      }
+    ]
+  },
+  {
+    "id": "banh-mi-bowls",
+    "name": "Banh Mi Bowls",
+    "description": "Quick ground pork bowls with coconut aminos glaze over cauliflower rice, topped with fresh veggies and sriracha mayo",
+    "cuisine": "vietnamese",
+    "protein": "pork",
+    "tags": ["whole30", "paleo", "dairy-free", "gluten-free"],
+    "servings": 3,
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 10,
+    "ingredients": [
+      {
+        "id": "ground-pork",
+        "name": "ground pork",
+        "amount": 1,
+        "unit": "pound",
+        "category": "protein"
+      },
+      {
+        "id": "garlic",
+        "name": "garlic",
+        "amount": 3,
+        "unit": "clove",
+        "category": "produce"
+      },
+      {
+        "id": "coconut-aminos",
+        "name": "coconut aminos",
+        "amount": 0.25,
+        "unit": "cup",
+        "category": "pantry"
+      },
+      {
+        "id": "arrowroot",
+        "name": "arrowroot",
+        "amount": 1,
+        "unit": "tablespoon",
+        "category": "pantry"
+      },
+      {
+        "id": "fresh-ginger",
+        "name": "fresh ginger",
+        "amount": 1,
+        "unit": "teaspoon",
+        "category": "produce"
+      },
+      {
+        "id": "cauliflower-rice",
+        "name": "cauliflower rice",
+        "amount": 12,
+        "unit": "oz",
+        "category": "produce"
+      },
+      {
+        "id": "cucumber",
+        "name": "cucumber",
+        "amount": 0.5,
+        "unit": "cup",
+        "category": "produce"
+      },
+      {
+        "id": "shredded-carrots",
+        "name": "shredded carrots",
+        "amount": 0.5,
+        "unit": "cup",
+        "category": "produce"
+      },
+      {
+        "id": "jalapeno",
+        "name": "jalapeño",
+        "amount": 1,
+        "unit": "jalapeño",
+        "category": "produce"
+      },
+      {
+        "id": "cilantro",
+        "name": "cilantro",
+        "amount": 0.25,
+        "unit": "cup",
+        "category": "produce"
+      },
+      {
+        "id": "mayonnaise",
+        "name": "mayonnaise",
+        "amount": 0.25,
+        "unit": "cup",
+        "category": "pantry"
+      },
+      {
+        "id": "sriracha",
+        "name": "sriracha",
+        "amount": 2,
+        "unit": "teaspoon",
+        "category": "pantry"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "brown ground pork in a skillet over medium-high heat, breaking it up as it cooks.",
+        "durationMinutes": 7
+      },
+      {
+        "order": 2,
+        "instruction": "while pork cooks, slice cucumber and jalapeño (seeds removed) and measure out shredded carrots. in a small bowl, whisk together coconut aminos, arrowroot, and grated ginger.",
+        "durationMinutes": 5
+      },
+      {
+        "order": 3,
+        "instruction": "cook cauliflower rice according to package instructions.",
+        "durationMinutes": 5
+      },
+      {
+        "order": 4,
+        "instruction": "add minced garlic to the cooked pork and sauté 2-3 minutes. reduce heat to low, pour the coconut aminos mixture over the pork, and stir for 1 minute until the sauce thickens and fully coats the meat.",
+        "durationMinutes": 4
+      },
+      {
+        "order": 5,
+        "instruction": "whisk mayonnaise and sriracha together in a small bowl.",
+        "durationMinutes": 1
+      },
+      {
+        "order": 6,
+        "instruction": "divide cauliflower rice into bowls. top with pork, cucumber, shredded carrots, and jalapeño. drizzle sriracha mayo over the top and garnish with cilantro.",
+        "durationMinutes": 2
       }
     ]
   }

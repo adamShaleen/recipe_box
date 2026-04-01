@@ -6,7 +6,6 @@ export interface Ingredient {
   amount: number;
   unit: string;
   category: IngredientCategory;
-  swappable: boolean;
 }
 
 export interface Step {
@@ -25,7 +24,6 @@ export interface Recipe {
   servings: number;
   prepTimeMinutes: number;
   cookTimeMinutes: number;
-  imageUrl?: string;
   ingredients: Ingredient[];
   steps: Step[];
 }
