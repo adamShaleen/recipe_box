@@ -9,6 +9,7 @@ describe('DatabaseConstruct', () => {
   beforeEach(() => {
     const app = new cdk.App();
     const stack = new cdk.Stack(app, 'TestStack');
+
     new DatabaseConstruct(stack, 'Database');
     template = Template.fromStack(stack);
   });
@@ -24,13 +25,13 @@ describe('DatabaseConstruct', () => {
         { AttributeName: 'PK', AttributeType: 'S' },
         { AttributeName: 'SK', AttributeType: 'S' }
       ],
-      BillingMode: 'PAY_PER_REQUEST',
+      BillingMode: 'PAY_PER_REQUEST'
     });
   });
 
-  it('has a RETAIN deletion policy', () => {
+  it('has a RETAIN removal policy', () => {
     template.hasResource(dynamoResource, {
-      DeletionPolicy: 'Retain',
+      DeletionPolicy: 'Retain'
     });
   });
 });

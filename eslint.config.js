@@ -13,6 +13,12 @@ module.exports = tseslint.config(
     },
   },
   {
+    files: ['**/__tests__/**/*.ts'],
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+    },
+  },
+  {
     ignores: ['**/dist/**', '**/cdk.out/**', '**/node_modules/**'],
   },
 );
