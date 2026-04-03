@@ -9,16 +9,19 @@ module.exports = tseslint.config(
     rules: {
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/explicit-function-return-type': ['error', { allowExpressions: true }],
-      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-    },
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }
+      ]
+    }
   },
   {
     files: ['**/__tests__/**/*.ts'],
     rules: {
-      '@typescript-eslint/no-explicit-any': 'off',
-    },
+      '@typescript-eslint/no-explicit-any': 'off'
+    }
   },
   {
-    ignores: ['**/dist/**', '**/cdk.out/**', '**/node_modules/**'],
-  },
+    ignores: ['**/dist/**', '**/cdk.out/**', '**/node_modules/**', 'eslint.config.js']
+  }
 );

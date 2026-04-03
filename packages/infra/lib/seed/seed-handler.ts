@@ -31,6 +31,13 @@ export const handler = async (
   const { StackId, RequestId, LogicalResourceId } = event;
   const CHUNK_SIZE = 5;
 
+  const responseBase = {
+    LogicalResourceId,
+    PhysicalResourceId: LogicalResourceId,
+    StackId,
+    RequestId
+  };
+
   try {
     const recipes: Recipe[] = JSON.parse(
       fs.readFileSync(path.join(__dirname, 'recipes.json'), 'utf-8')
@@ -72,21 +79,15 @@ export const handler = async (
     );
 
     return {
-      Status: 'SUCCESS',
-      LogicalResourceId,
-      PhysicalResourceId: LogicalResourceId,
-      StackId,
-      RequestId
+      ...responseBase,
+      Status: 'SUCCESS'
     };
   } catch (e) {
     console.error('There was an error with the seed-handler', { e });
 
     return {
+      ...responseBase,
       Status: 'FAILED',
-      LogicalResourceId,
-      PhysicalResourceId: LogicalResourceId,
-      StackId,
-      RequestId,
       Reason: JSON.stringify({ error: 'INTERNAL_ERROR', message: e })
     };
   }

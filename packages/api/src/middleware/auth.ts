@@ -1,5 +1,6 @@
 import type { APIGatewayProxyEvent } from 'aws-lambda';
+import { getEnvVar } from '../utils/env';
 
-export const validateApiKey = (_event: APIGatewayProxyEvent): boolean => {
-  throw new Error('Not implemented');
+export const validateApiKey = ({ headers }: APIGatewayProxyEvent): boolean => {
+  return getEnvVar('API_KEY') === headers['x-api-key'];
 };

@@ -29,6 +29,8 @@ export class SeedConstruct extends Construct {
         commandHooks: {
           beforeBundling: () => [],
           beforeInstall: () => [],
+          // Copies recipes.json into the Lambda bundle so it's available at runtime
+          // as a local file (no S3 read needed during seeding).
           afterBundling: (_inputDir, outputDir) => [
             `cp ${path.resolve(__dirname, '../../../../data/recipes.json')} ${outputDir}/recipes.json`
           ]
@@ -47,10 +49,16 @@ export class SeedConstruct extends Construct {
     props.faissIndexBucket.grantPut(this.handler);
     this.handler.addToRolePolicy(props.bedrockPolicyStatement);
 
+    // Wraps the Lambda as a CloudFormation custom resource provider.
+    // onEventHandler is invoked by CloudFormation on Create/Update/Delete events.
     const provider = new cr.Provider(this, 'SeedProvider', {
       onEventHandler: this.handler
     });
 
+    // Declaring this resource in the stack is what triggers execution at deploy time.
+    // CloudFormation creates/updates this resource on every `cdk deploy` where it has
+    // changed, which causes the Provider to invoke the seed Lambda. serviceToken is
+    // the ARN the Provider exposes to CloudFormation for that invocation.
     new cdk.CustomResource(this, 'SeedCustomResource', {
       serviceToken: provider.serviceToken
     });
