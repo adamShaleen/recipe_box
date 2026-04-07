@@ -4,8 +4,10 @@ import { RecipeBrowser } from './components/RecipeBrowser';
 import { RecipeDetail } from './components/RecipeDetail';
 import { RecipeModifier } from './components/RecipeModifier';
 import { Button } from './components/ui/Button';
+import { CardSkeleton } from './components/ui/CardSkeleton';
 import { useModifyRecipe } from './hooks/useModifyRecipe';
 import { useRecipe } from './hooks/useRecipe';
+import styles from './App.module.css';
 
 export const App: FC = () => {
   const [selectedRecipeId, setSelectedRecipeId] = useState<string | null>(null);
@@ -21,16 +23,16 @@ export const App: FC = () => {
     return <ModifiedResult recipe={result.modifiedRecipe} onBack={handleBack} />;
   }
 
-  if (selectedRecipeId && recipeLoading) return <p>Loading...</p>;
+  if (selectedRecipeId && recipeLoading) return <CardSkeleton />;
   if (selectedRecipeId && recipeError) return <p>Error: {recipeError}</p>;
   if (selectedRecipeId && recipe !== null) {
     return (
-      <>
-        <Button onClick={handleBack}>Start Over</Button>
+      <div className={styles.page}>
         <RecipeDetail recipe={recipe} />
         {modifyError && <p>Error: {modifyError}</p>}
         <RecipeModifier recipe={recipe} onSubmit={modify} disabled={modifyLoading} />
-      </>
+        <Button className="destructiveButton" onClick={handleBack}>Start Over</Button>
+      </div>
     );
   }
 

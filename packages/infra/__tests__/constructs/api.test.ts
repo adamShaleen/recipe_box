@@ -22,10 +22,16 @@ describe('ApiConstruct', () => {
       resources: ['mock-resource-1', 'mock-resource-2']
     });
 
+    const marketplacePolicyStatement = new iam.PolicyStatement({
+      actions: ['aws-marketplace:ViewSubscriptions', 'aws-marketplace:Subscribe'],
+      resources: ['*']
+    });
+
     new ApiConstruct(stack, 'Api', {
       table,
       faissIndexBucket: bucket,
       bedrockPolicyStatement: policyStatement,
+      bedrockMarketplacePolicyStatement: marketplacePolicyStatement,
       apiKey: 'mock-api-key'
     });
 

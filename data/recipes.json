@@ -153,28 +153,28 @@
       },
       {
         "id": "cumin",
-        "name:": "cumin",
+        "name": "cumin",
         "amount": 2,
         "unit": "teaspoon",
         "category": "seasoning"
       },
       {
         "id": "paprika",
-        "name:": "paprika",
+        "name": "paprika",
         "amount": 2,
         "unit": "teaspoon",
         "category": "seasoning"
       },
       {
         "id": "turmeric",
-        "name:": "turmeric",
+        "name": "turmeric",
         "amount": 0.5,
         "unit": "teaspoon",
         "category": "seasoning"
       },
       {
         "id": "cinnamon",
-        "name:": "cinnamon",
+        "name": "cinnamon",
         "amount": 0.25,
         "unit": "teaspoon",
         "category": "seasoning"

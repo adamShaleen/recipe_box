@@ -1,0 +1,143 @@
+.container {
+  padding: 20px 0 0;
+}
+
+.sectionTitle {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin: 0 0 12px;
+}
+
+.section {
+  padding: 0 20px;
+  margin-bottom: 24px;
+}
+
+/* Ingredients */
+
+.ingredientRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.ingredientRow:last-child {
+  border-bottom: none;
+}
+
+.ingredientLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #111827;
+  cursor: pointer;
+  flex: 1;
+  min-width: 0;
+  text-transform: capitalize;
+}
+
+.ingredientLabel.removed {
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: #111827;
+  cursor: pointer;
+}
+
+.select {
+  font-size: 1rem;
+  color: #374151;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 6px 10px;
+  min-width: 120px;
+  max-width: 160px;
+  cursor: pointer;
+}
+
+.select:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Dietary filters */
+
+.chipGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #374151;
+  background: #f3f4f6;
+  border: 1px solid transparent;
+  border-radius: 100px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+
+.chip[aria-pressed='true'] {
+  background: #111827;
+  color: #ffffff;
+  border-color: #111827;
+}
+
+/* Servings */
+
+.servingsRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.numberInput {
+  font-size: 1rem;
+  color: #111827;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 6px 10px;
+  width: 72px;
+  text-align: center;
+}
+
+.servingsLabel {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Cuisine shift */
+
+.cuisineSelect {
+  font-size: 1rem;
+  color: #374151;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 6px 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Submit */
+
+.submitButton {
+  margin-top: 8px;
+}

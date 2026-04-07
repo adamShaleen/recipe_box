@@ -9,7 +9,7 @@ import {
   type Recipe
 } from '@recipe-box/shared';
 import { useState, type FC } from 'react';
-import { Button } from '../ui/Button';
+import styles from './RecipeModifier.module.css';
 
 interface RecipeModifierProps {
   recipe: Recipe;
@@ -66,9 +66,9 @@ export const RecipeModifier: FC<RecipeModifierProps> = ({ recipe, onSubmit, disa
   };
 
   return (
-    <div>
-      <div>
-        <h4>Ingredients</h4>
+    <div className={styles.container}>
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>Ingredients</h2>
         {recipe.ingredients.map((ingredient) => {
           const isRemoved = ingredientRemovals.includes(ingredient.id);
           const currentSwap = ingredientSwaps.find((s) => s.from === ingredient.name);
@@ -76,16 +76,18 @@ export const RecipeModifier: FC<RecipeModifierProps> = ({ recipe, onSubmit, disa
             (s) => s !== ingredient.name
           );
           return (
-            <div key={ingredient.id}>
-              <label>
+            <div key={ingredient.id} className={styles.ingredientRow}>
+              <label className={`${styles.ingredientLabel} ${isRemoved ? styles.removed : ''}`}>
                 <input
                   type="checkbox"
+                  className={styles.checkbox}
                   checked={!isRemoved}
                   onChange={() => toggleRemoval(ingredient.id)}
                 />
                 {ingredient.name}
               </label>
               <select
+                className={styles.select}
                 disabled={isRemoved}
                 value={currentSwap?.to ?? ''}
                 onChange={(e) => setSwap(ingredient.name, e.target.value)}
@@ -102,32 +104,40 @@ export const RecipeModifier: FC<RecipeModifierProps> = ({ recipe, onSubmit, disa
         })}
       </div>
 
-      <div>
-        <h4>Dietary Filters</h4>
-        {DIETARY_FILTERS.map((filter) => (
-          <button
-            key={filter}
-            onClick={() => toggleDietaryFilter(filter)}
-            aria-pressed={dietaryFilters.includes(filter)}
-          >
-            {filter}
-          </button>
-        ))}
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>Dietary Filters</h2>
+        <div className={styles.chipGroup}>
+          {DIETARY_FILTERS.map((filter) => (
+            <button
+              key={filter}
+              className={styles.chip}
+              onClick={() => toggleDietaryFilter(filter)}
+              aria-pressed={dietaryFilters.includes(filter)}
+            >
+              {filter}
+            </button>
+          ))}
+        </div>
       </div>
 
-      <div>
-        <h4>Servings</h4>
-        <input
-          type="number"
-          min={1}
-          value={servingScale}
-          onChange={(e) => setServingScale(Number(e.target.value))}
-        />
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>Servings</h2>
+        <div className={styles.servingsRow}>
+          <input
+            type="number"
+            className={styles.numberInput}
+            min={1}
+            value={servingScale}
+            onChange={(e) => setServingScale(Number(e.target.value))}
+          />
+          <span className={styles.servingsLabel}>servings</span>
+        </div>
       </div>
 
-      <div>
-        <h4>Cuisine Shift</h4>
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>Cuisine Shift</h2>
         <select
+          className={styles.cuisineSelect}
           value={cuisineShift ?? ''}
           onChange={(e) =>
             setCuisineShift(e.target.value === '' ? undefined : (e.target.value as CuisineType))
@@ -142,9 +152,9 @@ export const RecipeModifier: FC<RecipeModifierProps> = ({ recipe, onSubmit, disa
         </select>
       </div>
 
-      <Button onClick={handleSubmit} disabled={disabled}>
-        Modify Recipe
-      </Button>
+      <button className={`primaryButton ${styles.submitButton}`} onClick={handleSubmit} disabled={disabled}>
+        {disabled ? 'Modifying…' : 'Modify Recipe'}
+      </button>
     </div>
   );
 };

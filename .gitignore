@@ -38,3 +38,5 @@ cdk.context.json
 
 # Test coverage
 coverage/
+.vercel
+.env*.local

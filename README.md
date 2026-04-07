@@ -4,7 +4,7 @@ A mobile-first web application for browsing and AI-modifying cooking recipes. Se
 
 ## How It Works
 
-1. **Browse** — Filter and explore a curated collection of seeded recipes by cuisine, protein, dietary tags, or category.
+1. **Browse** — Explore a curated collection of seeded recipes.
 2. **Select** — Tap a recipe to view its full ingredients, steps, and details.
 3. **Modify** — Toggle ingredients on/off, swap items, adjust servings, apply dietary filters (keto, vegan, gluten-free, etc.), or shift the cuisine style — all through buttons, chips, sliders, and dropdowns. No typing required.
 4. **Generate** — The app retrieves relevant techniques and ingredients from other recipes in the collection (RAG), then sends everything to Claude Haiku on Bedrock to produce a coherent modified recipe.
@@ -153,15 +153,49 @@ From individual packages:
 | `npx cdk diff`    | `packages/infra` | Preview infrastructure changes  |
 | `npx cdk destroy` | `packages/infra` | Tear down AWS stack             |
 
-### Adding a New Recipe
+### Managing Seed Recipes
 
-Add the recipe to `data/recipes.json` following the schema defined in `packages/shared/src/types/recipe.ts`, then redeploy the infrastructure to re-run the seed process:
+All recipe data lives in `data/recipes.json`. The seed handler is a CloudFormation custom resource that runs at deploy time, but CloudFormation only re-invokes it when it detects a property change on the resource — not simply because the Lambda asset changed. For edits and removals, invoke the seed Lambda manually after making DynamoDB changes. Its behavior differs by operation:
+
+#### Adding a recipe
+
+1. Add the recipe to `data/recipes.json` following the schema in `packages/shared/src/types/recipe.ts`
+2. Redeploy:
+   ```bash
+   cd packages/infra && npx cdk deploy
+   ```
+
+The seed handler uses a `attribute_not_exists(PK)` condition on all DynamoDB writes, so existing recipes are skipped and only the new entry is written. The FAISS index is always fully rebuilt from the entire JSON file.
+
+#### Editing an existing recipe
+
+The DynamoDB condition expression means changes to an existing recipe in `recipes.json` will be silently ignored on redeploy — the existing rows are never overwritten. You must manually delete the recipe's rows from DynamoDB first:
 
 ```bash
-cd packages/infra && npx cdk deploy
+# Delete all 4 rows for the recipe (METADATA, INGREDIENTS, STEPS, EMBEDDING)
+aws dynamodb delete-item --table-name recipes --key '{"PK":{"S":"RECIPE#<id>"},"SK":{"S":"METADATA"}}'
+aws dynamodb delete-item --table-name recipes --key '{"PK":{"S":"RECIPE#<id>"},"SK":{"S":"INGREDIENTS"}}'
+aws dynamodb delete-item --table-name recipes --key '{"PK":{"S":"RECIPE#<id>"},"SK":{"S":"STEPS"}}'
+aws dynamodb delete-item --table-name recipes --key '{"PK":{"S":"RECIPE#<id>"},"SK":{"S":"EMBEDDING"}}'
 ```
 
-The seed process is idempotent — existing recipes are skipped and only new entries are written to DynamoDB and indexed in FAISS.
+Then invoke the seed Lambda manually to re-seed the recipe and rebuild the FAISS index:
+
+```bash
+aws lambda invoke \
+  --function-name RecipeBoxStack-SeedLambdaSeedHandlerCCC8A393-m3wVGj9EqBvs \
+  --payload '{"RequestType":"Create","StackId":"manual","RequestId":"manual","LogicalResourceId":"manual"}' \
+  --cli-binary-format raw-in-base64-out \
+  /tmp/seed-response.json && cat /tmp/seed-response.json
+```
+
+#### Removing a recipe
+
+1. Remove the recipe from `data/recipes.json`
+2. Manually delete its rows from DynamoDB (same four commands as above)
+3. Invoke the seed Lambda manually (same command as above) to rebuild the FAISS index without it
+
+If you skip the manual DynamoDB deletion, the recipe will still appear in the browse list even though it is no longer in the FAISS index — RAG-based modifications would simply not use it as a reference.
 
 ### Testing
 
