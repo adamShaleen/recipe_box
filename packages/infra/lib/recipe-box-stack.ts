@@ -27,6 +27,7 @@ export class RecipeBoxStack extends cdk.Stack {
       table: database.table,
       faissIndexBucket: storage.bucket,
       bedrockPolicyStatement: bedrock.policyStatement,
+      bedrockMarketplacePolicyStatement: bedrock.marketplacePolicyStatement,
       apiKey
     });
   }

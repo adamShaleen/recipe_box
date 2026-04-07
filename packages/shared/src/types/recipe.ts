@@ -22,8 +22,8 @@ export interface Recipe {
   protein: string;
   tags: string[];
   servings: number;
-  prepTimeMinutes: number;
-  cookTimeMinutes: number;
+  prepTime: number;
+  cookTime: number;
   ingredients: Ingredient[];
   steps: Step[];
 }

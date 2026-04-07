@@ -30,7 +30,7 @@ describe('get-recipe', () => {
 
     it('returns the recipe', () => {
       expect(okSpy).toHaveBeenCalledTimes(1);
-      expect(okSpy).toHaveBeenCalledWith({ foo: 'jazz' });
+      expect(okSpy).toHaveBeenCalledWith({ recipe: { foo: 'jazz' } });
     });
   });
 

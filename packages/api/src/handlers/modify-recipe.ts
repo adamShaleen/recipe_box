@@ -38,8 +38,9 @@ export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayPr
     const prompt = buildModificationPrompt(recipe, context, modificationRequest);
 
     const modifiedRecipe = await invokeHaiku(prompt);
-    return ok(modifiedRecipe);
+    return ok({ modifiedRecipe });
   } catch (e) {
+    console.error(e);
     return internalError(e instanceof Error ? e.message : String(e));
   }
 };

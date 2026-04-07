@@ -81,7 +81,7 @@ describe('api', () => {
     let result: any;
 
     beforeEach(async () => {
-      apiFetchSpy.mockResolvedValue({ yep: 'kewl' });
+      apiFetchSpy.mockResolvedValue({ recipe: { yep: 'kewl' } });
       result = await sut.fetchRecipe('mock-id');
     });
 

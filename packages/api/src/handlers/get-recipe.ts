@@ -8,7 +8,7 @@ export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayPr
   try {
     const recipe = await getRecipe(id);
     if (!recipe) return notFound(`No recipe found with id ${id}`);
-    return ok(recipe);
+    return ok({ recipe });
   } catch (e) {
     return internalError(e instanceof Error ? e.message : String(e));
   }

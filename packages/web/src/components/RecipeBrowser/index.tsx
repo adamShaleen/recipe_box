@@ -30,14 +30,22 @@ export const RecipeBrowser: FC<RecipeBrowserProps> = ({ onSelect }) => {
     <div>
       <div>
         {CUISINE_TYPES.map((c) => (
-          <button key={c} onClick={() => toggle(c, cuisine, setCuisine)} aria-pressed={cuisine === c}>
+          <button
+            key={c}
+            onClick={() => toggle(c, cuisine, setCuisine)}
+            aria-pressed={cuisine === c}
+          >
             {c}
           </button>
         ))}
       </div>
       <div>
         {PROTEIN_TYPES.map((p) => (
-          <button key={p} onClick={() => toggle(p, protein, setProtein)} aria-pressed={protein === p}>
+          <button
+            key={p}
+            onClick={() => toggle(p, protein, setProtein)}
+            aria-pressed={protein === p}
+          >
             {p}
           </button>
         ))}
@@ -54,7 +62,7 @@ export const RecipeBrowser: FC<RecipeBrowserProps> = ({ onSelect }) => {
           <div key={recipe.id} onClick={() => onSelect(recipe)}>
             <h3>{recipe.name}</h3>
             <p>{recipe.cuisine}</p>
-            <p>{recipe.prepTimeMinutes + recipe.cookTimeMinutes} min</p>
+            <p>{recipe.prepTime + recipe.cookTime} min</p>
           </div>
         ))}
       </div>

@@ -3,6 +3,7 @@ import { Construct } from 'constructs';
 
 export class BedrockConstruct extends Construct {
   readonly policyStatement: iam.PolicyStatement;
+  readonly marketplacePolicyStatement: iam.PolicyStatement;
 
   constructor(scope: Construct, id: string) {
     super(scope, id);
@@ -11,8 +12,13 @@ export class BedrockConstruct extends Construct {
       actions: ['bedrock:InvokeModel'],
       resources: [
         'arn:aws:bedrock:*::foundation-model/anthropic.claude-3-haiku-20240307-v1:0',
-        'arn:aws:bedrock:*::foundation-model/amazon.titan-embed-text-v1',
-      ],
+        'arn:aws:bedrock:*::foundation-model/amazon.titan-embed-text-v1'
+      ]
+    });
+
+    this.marketplacePolicyStatement = new iam.PolicyStatement({
+      actions: ['aws-marketplace:ViewSubscriptions', 'aws-marketplace:Subscribe'],
+      resources: ['*']
     });
   }
 }

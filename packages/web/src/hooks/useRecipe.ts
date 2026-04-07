@@ -14,6 +14,7 @@ export const useRecipe = (id: string): UseRecipeResult => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    if (!id) return;
     setLoading(true);
 
     const load = async (): Promise<void> => {

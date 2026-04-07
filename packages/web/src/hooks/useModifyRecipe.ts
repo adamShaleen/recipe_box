@@ -4,6 +4,7 @@ import { modifyRecipe } from '../services/api';
 
 export interface UseModifyRecipeResult {
   modify: (request: ModifyRecipeRequest) => Promise<void>;
+  reset: () => void;
   result: ModifyRecipeResponse | null;
   loading: boolean;
   error: string | null;
@@ -13,6 +14,10 @@ export const useModifyRecipe = (): UseModifyRecipeResult => {
   const [result, setResult] = useState<ModifyRecipeResponse | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const reset = (): void => {
+    setResult(null);
+  };
 
   const modify = async (request: ModifyRecipeRequest): Promise<void> => {
     setLoading(true);
@@ -27,5 +32,5 @@ export const useModifyRecipe = (): UseModifyRecipeResult => {
     }
   };
 
-  return { modify, result, loading, error };
+  return { modify, result, loading, error, reset };
 };

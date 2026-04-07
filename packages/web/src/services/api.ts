@@ -1,8 +1,8 @@
 import type {
+  GetRecipeResponse,
   ListRecipesQuery,
   ModifyRecipeRequest,
   ModifyRecipeResponse,
-  Recipe,
   RecipeMetadata
 } from '@recipe-box/shared';
 import { API_KEY, API_URL } from '../config';
@@ -18,12 +18,14 @@ export const apiFetch = async <T>(path: string, options?: RequestInit): Promise<
 };
 
 export const fetchRecipes = async (query?: ListRecipesQuery): Promise<RecipeMetadata[]> => {
-  const queryString = new URLSearchParams(query as Record<string, string>).toString();
+  const params = Object.fromEntries(Object.entries(query ?? {}).filter(([, v]) => v !== undefined));
+  const queryString = new URLSearchParams(params).toString();
   return apiFetch<RecipeMetadata[]>(queryString ? `recipes?${queryString}` : 'recipes');
 };
 
-export const fetchRecipe = async (id: string): Promise<Recipe> => {
-  return apiFetch<Recipe>(`recipes/${id}`);
+export const fetchRecipe = async (id: string): Promise<GetRecipeResponse['recipe']> => {
+  const { recipe } = await apiFetch<GetRecipeResponse>(`recipes/${id}`);
+  return recipe;
 };
 
 export const modifyRecipe = async (request: ModifyRecipeRequest): Promise<ModifyRecipeResponse> => {

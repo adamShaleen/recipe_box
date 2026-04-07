@@ -25,7 +25,7 @@ describe('dynamo service', () => {
       let result: any;
 
       beforeEach(async () => {
-        dynamoMock.on(ScanCommand).resolves({ Items: [{ foo: { S: 'jazz' } }] });
+        dynamoMock.on(ScanCommand).resolves({ Items: [{ PK: { S: 'RECIPE#mock-id' }, SK: { S: 'METADATA' }, foo: { S: 'jazz' } }] });
         result = await sut.listRecipes(query);
       });
 
@@ -43,7 +43,7 @@ describe('dynamo service', () => {
       });
 
       it('returns the recipes', () => {
-        expect(result).toEqual([{ foo: 'jazz' }]);
+        expect(result).toEqual([{ foo: 'jazz', id: 'mock-id', tags: [] }]);
       });
     });
 
@@ -83,7 +83,7 @@ describe('dynamo service', () => {
           description: { S: 'mock-description' },
           cuisine: { S: 'mock-cuisine' },
           protein: { S: 'mock-protein' },
-          tags: { SS: ['mock-tag'] },
+          tags: { L: [{ S: 'mock-tag' }] },
           servings: { N: '2' },
           prepTimeMinutes: { N: '10' },
           cookTimeMinutes: { N: '20' }
@@ -132,7 +132,7 @@ describe('dynamo service', () => {
           protein: 'mock-protein',
           servings: 2,
           steps: [{ durationMinutes: 5, instruction: 'mock-step', order: 1 }],
-          tags: new Set(['mock-tag'])
+          tags: ['mock-tag']
         });
       });
     });

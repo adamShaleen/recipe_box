@@ -177,7 +177,7 @@ describe('modify-recipe', () => {
 
     it('returns the ok response', () => {
       expect(okSpy).toHaveBeenCalledTimes(1);
-      expect(okSpy).toHaveBeenCalledWith('modified recipe');
+      expect(okSpy).toHaveBeenCalledWith({ modifiedRecipe: 'modified recipe' });
     });
   });
 });

@@ -13,6 +13,7 @@ interface ApiConstructProps {
   table: dynamodb.Table;
   faissIndexBucket: s3.Bucket;
   bedrockPolicyStatement: iam.PolicyStatement;
+  bedrockMarketplacePolicyStatement: iam.PolicyStatement;
 }
 
 export class ApiConstruct extends Construct {
@@ -66,6 +67,7 @@ export class ApiConstruct extends Construct {
     props.table.grantReadData(modifyRecipeHandler);
     props.faissIndexBucket.grantRead(modifyRecipeHandler);
     modifyRecipeHandler.addToRolePolicy(props.bedrockPolicyStatement);
+    modifyRecipeHandler.addToRolePolicy(props.bedrockMarketplacePolicyStatement);
 
     const api = new apigateway.RestApi(this, 'RecipeBoxApi', {
       restApiName: 'recipe-box-api',

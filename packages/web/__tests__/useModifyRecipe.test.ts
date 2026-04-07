@@ -60,6 +60,24 @@ describe('useModifyRecipe', () => {
       expect(result.current.result).toEqual({ modifiedRecipe: { id: 'mock-id' } });
       expect(result.current.error).toBeNull();
     });
+
+    it('reset clears result', async () => {
+      modifyRecipeSpy.mockResolvedValue({ modifiedRecipe: { id: 'mock-id' } } as any);
+
+      const { result } = renderHook(() => useModifyRecipe());
+
+      await act(async () => {
+        await result.current.modify(mockRequest);
+      });
+
+      expect(result.current.result).toEqual({ modifiedRecipe: { id: 'mock-id' } });
+
+      act(() => {
+        result.current.reset();
+      });
+
+      expect(result.current.result).toBeNull();
+    });
   });
 
   describe('Sad Path', () => {

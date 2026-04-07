@@ -39,7 +39,16 @@ export const listRecipes = async (query: ListRecipesQuery): Promise<RecipeMetada
 
   const { Items: recipes }: ScanCommandOutput = await dynamoClient.send(new ScanCommand(input));
   // unmarshall converts DynamoDB's wire format ({ S: "value" }) to plain JS objects.
-  return recipes?.length ? recipes.map((recipe) => unmarshall(recipe) as RecipeMetadata) : [];
+  return recipes?.length
+    ? recipes.map((recipe) => {
+        const { PK, SK: _sk, tags, ...rest } = unmarshall(recipe);
+        return {
+          ...rest,
+          id: (PK as string).replace('RECIPE#', ''),
+          tags: Array.isArray(tags) ? tags : []
+        } as RecipeMetadata;
+      })
+    : [];
 };
 
 export const getRecipe = async (id: string): Promise<Recipe | null> => {
@@ -58,10 +67,12 @@ export const getRecipe = async (id: string): Promise<Recipe | null> => {
 
   // Assemble the recipe from its separate rows. ingredients and steps are stored as JSON strings.
   // EMBEDDING is intentionally excluded — only needed by the RAG service.
-  const { PK: _partitionKey, SK: _sortKey, ...fieldsWeCareAbout } = metadata;
+  const { PK, SK: _sortKey, tags, ...fieldsWeCareAbout } = metadata;
 
   return {
     ...fieldsWeCareAbout,
+    id: (PK as string).replace('RECIPE#', ''),
+    tags: Array.isArray(tags) ? tags : [],
     ingredients: JSON.parse(rows?.find((r) => r['SK'] === 'INGREDIENTS')?.ingredients ?? '[]'),
     steps: JSON.parse(rows?.find((r) => r['SK'] === 'STEPS')?.steps ?? '[]')
   } as Recipe;
