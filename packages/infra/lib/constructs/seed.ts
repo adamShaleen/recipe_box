@@ -1,10 +1,10 @@
 import * as cdk from 'aws-cdk-lib';
-import * as cr from 'aws-cdk-lib/custom-resources';
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as lambdaNodejs from 'aws-cdk-lib/aws-lambda-nodejs';
 import * as s3 from 'aws-cdk-lib/aws-s3';
+import * as cr from 'aws-cdk-lib/custom-resources';
 import { Construct } from 'constructs';
 import * as path from 'path';
 
@@ -24,15 +24,17 @@ export class SeedConstruct extends Construct {
       runtime: lambda.Runtime.NODEJS_20_X,
       timeout: cdk.Duration.minutes(5),
       memorySize: 512,
+      projectRoot: path.resolve(__dirname, '../../../..'),
       bundling: {
-        externalModules: [],
+        nodeModules: ['faiss-node'],
+        forceDockerBundling: true,
         commandHooks: {
           beforeBundling: () => [],
           beforeInstall: () => [],
           // Copies recipes.json into the Lambda bundle so it's available at runtime
           // as a local file (no S3 read needed during seeding).
           afterBundling: (_inputDir, outputDir) => [
-            `cp ${path.resolve(__dirname, '../../../../data/recipes.json')} ${outputDir}/recipes.json`
+            `cp ${path.join(_inputDir, 'data/recipes.json')} ${outputDir}/recipes.json`
           ]
         }
       },

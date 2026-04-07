@@ -1,5 +1,6 @@
 import type { FC } from 'react';
+import { RecipeBrowser } from './components/RecipeBrowser';
 
 export const App: FC = () => {
-  throw new Error('Not implemented');
+  return <RecipeBrowser onSelect={() => console.log('yep')} />;
 };

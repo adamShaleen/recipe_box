@@ -9,6 +9,7 @@ import { Construct } from 'constructs';
 import * as path from 'path';
 
 interface ApiConstructProps {
+  apiKey: string;
   table: dynamodb.Table;
   faissIndexBucket: s3.Bucket;
   bedrockPolicyStatement: iam.PolicyStatement;
@@ -20,7 +21,8 @@ export class ApiConstruct extends Construct {
 
     const sharedEnv: Record<string, string> = {
       TABLE_NAME: props.table.tableName,
-      FAISS_BUCKET: props.faissIndexBucket.bucketName
+      FAISS_BUCKET: props.faissIndexBucket.bucketName,
+      API_KEY: props.apiKey
     };
 
     const lambdaDefaults: Partial<lambdaNodejs.NodejsFunctionProps> = {
@@ -55,7 +57,8 @@ export class ApiConstruct extends Construct {
       handler: 'handler',
       memorySize: 1024,
       timeout: cdk.Duration.seconds(60),
-      environment: sharedEnv
+      environment: sharedEnv,
+      bundling: { nodeModules: ['faiss-node'], forceDockerBundling: true }
     });
 
     props.table.grantReadData(getRecipesHandler);

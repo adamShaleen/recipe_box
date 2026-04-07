@@ -606,5 +606,299 @@
         "durationMinutes": 2
       }
     ]
+  },
+  {
+    "id": "instant-pot-white-chicken-chili",
+    "name": "Instant Pot White Chicken Chili",
+    "description": "Creamy, hearty white chicken chili made fast in the pressure cooker — weeknight dinner done in under an hour",
+    "cuisine": "american",
+    "protein": "chicken",
+    "tags": ["gluten-free", "easy"],
+    "servings": 6,
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 35,
+    "ingredients": [
+      {
+        "id": "chicken-breast",
+        "name": "boneless skinless chicken breast",
+        "amount": 1.5,
+        "unit": "pound",
+        "category": "protein"
+      },
+      {
+        "id": "cannellini-beans",
+        "name": "cannellini beans",
+        "amount": 2,
+        "unit": "can",
+        "category": "pantry"
+      },
+      {
+        "id": "diced-green-chiles",
+        "name": "diced green chiles",
+        "amount": 2,
+        "unit": "can",
+        "category": "pantry"
+      },
+      {
+        "id": "chicken-stock",
+        "name": "chicken stock",
+        "amount": 2,
+        "unit": "cup",
+        "category": "pantry"
+      },
+      {
+        "id": "yellow-onion",
+        "name": "yellow onion",
+        "amount": 1,
+        "unit": "onion",
+        "category": "produce"
+      },
+      {
+        "id": "garlic",
+        "name": "garlic",
+        "amount": 4,
+        "unit": "clove",
+        "category": "produce"
+      },
+      {
+        "id": "cumin",
+        "name": "cumin",
+        "amount": 1.5,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "oregano",
+        "name": "oregano",
+        "amount": 1,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "chili-powder",
+        "name": "chili powder",
+        "amount": 1,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "salt",
+        "name": "salt",
+        "amount": 1,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "black-pepper",
+        "name": "black pepper",
+        "amount": 0.5,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "cream-cheese",
+        "name": "cream cheese",
+        "amount": 4,
+        "unit": "oz",
+        "category": "dairy"
+      },
+      {
+        "id": "lime",
+        "name": "lime",
+        "amount": 1,
+        "unit": "lime",
+        "category": "produce"
+      },
+      {
+        "id": "cilantro",
+        "name": "cilantro",
+        "amount": 0.25,
+        "unit": "cup",
+        "category": "produce"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "set instant pot to sauté mode. dice onion and mince garlic. sauté onion for 3 minutes, then add garlic and cook 1 more minute.",
+        "durationMinutes": 5
+      },
+      {
+        "order": 2,
+        "instruction": "add chicken breasts, cannellini beans, green chiles, chicken stock, cumin, oregano, chili powder, salt, and black pepper. stir to combine.",
+        "durationMinutes": 2
+      },
+      {
+        "order": 3,
+        "instruction": "seal the lid and pressure cook on high for 20 minutes.",
+        "durationMinutes": 20
+      },
+      {
+        "order": 4,
+        "instruction": "quick release the pressure. remove chicken breasts and shred with two forks.",
+        "durationMinutes": 5
+      },
+      {
+        "order": 5,
+        "instruction": "cut cream cheese into chunks and stir into the pot until fully melted and incorporated.",
+        "durationMinutes": 2
+      },
+      {
+        "order": 6,
+        "instruction": "return shredded chicken to the pot and squeeze in lime juice. stir to combine.",
+        "durationMinutes": 1
+      },
+      {
+        "order": 7,
+        "instruction": "ladle into bowls and garnish with cilantro. serve with sour cream, shredded cheese, or tortilla chips as desired.",
+        "durationMinutes": 2
+      }
+    ]
+  },
+  {
+    "id": "instant-pot-bbq-pulled-pork-sweet-potato",
+    "name": "Instant Pot BBQ Pulled Pork with Sweet Potato",
+    "description": "Fall-apart pulled pork in smoky BBQ sauce served over roasted sweet potatoes — big flavor with minimal hands-on time",
+    "cuisine": "american",
+    "protein": "pork",
+    "tags": ["gluten-free", "dairy-free", "easy"],
+    "servings": 4,
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 65,
+    "ingredients": [
+      {
+        "id": "pork-shoulder",
+        "name": "boneless pork shoulder",
+        "amount": 2,
+        "unit": "pound",
+        "category": "protein"
+      },
+      {
+        "id": "sweet-potato",
+        "name": "sweet potato",
+        "amount": 4,
+        "unit": "sweet potato",
+        "category": "produce"
+      },
+      {
+        "id": "bbq-sauce",
+        "name": "BBQ sauce",
+        "amount": 1,
+        "unit": "cup",
+        "category": "pantry"
+      },
+      {
+        "id": "apple-cider-vinegar",
+        "name": "apple cider vinegar",
+        "amount": 2,
+        "unit": "tablespoon",
+        "category": "pantry"
+      },
+      {
+        "id": "chicken-broth",
+        "name": "chicken broth",
+        "amount": 0.5,
+        "unit": "cup",
+        "category": "pantry"
+      },
+      {
+        "id": "olive-oil",
+        "name": "olive oil",
+        "amount": 1,
+        "unit": "tablespoon",
+        "category": "pantry"
+      },
+      {
+        "id": "brown-sugar",
+        "name": "brown sugar",
+        "amount": 1,
+        "unit": "tablespoon",
+        "category": "pantry"
+      },
+      {
+        "id": "smoked-paprika",
+        "name": "smoked paprika",
+        "amount": 1.5,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "garlic-powder",
+        "name": "garlic powder",
+        "amount": 1,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "onion-powder",
+        "name": "onion powder",
+        "amount": 1,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "cumin",
+        "name": "cumin",
+        "amount": 0.5,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "salt",
+        "name": "salt",
+        "amount": 1.5,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      },
+      {
+        "id": "black-pepper",
+        "name": "black pepper",
+        "amount": 0.5,
+        "unit": "teaspoon",
+        "category": "seasoning"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "mix smoked paprika, garlic powder, onion powder, cumin, brown sugar, salt, and black pepper in a small bowl. cut pork shoulder into 3-4 large chunks and coat all sides with the dry rub.",
+        "durationMinutes": 5
+      },
+      {
+        "order": 2,
+        "instruction": "set instant pot to sauté mode and heat olive oil. sear pork chunks 2-3 minutes per side until browned. work in batches if needed.",
+        "durationMinutes": 10
+      },
+      {
+        "order": 3,
+        "instruction": "pour in chicken broth and apple cider vinegar to deglaze, scraping up any browned bits from the bottom. add half the BBQ sauce and stir.",
+        "durationMinutes": 2
+      },
+      {
+        "order": 4,
+        "instruction": "seal the lid and pressure cook on high for 45 minutes.",
+        "durationMinutes": 45
+      },
+      {
+        "order": 5,
+        "instruction": "while pork cooks, preheat oven to 400 degrees. pierce sweet potatoes several times with a fork, rub lightly with olive oil, and roast directly on the oven rack for 45 minutes until tender.",
+        "durationMinutes": 45
+      },
+      {
+        "order": 6,
+        "instruction": "let pressure naturally release for 15 minutes, then quick release any remaining pressure.",
+        "durationMinutes": 15
+      },
+      {
+        "order": 7,
+        "instruction": "remove pork and shred with two forks. return shredded pork to the pot and toss with remaining BBQ sauce and a few spoonfuls of the cooking liquid.",
+        "durationMinutes": 5
+      },
+      {
+        "order": 8,
+        "instruction": "split sweet potatoes lengthwise and pile pulled pork on top. serve immediately.",
+        "durationMinutes": 2
+      }
+    ]
   }
 ]

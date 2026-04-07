@@ -25,7 +25,8 @@ describe('ApiConstruct', () => {
     new ApiConstruct(stack, 'Api', {
       table,
       faissIndexBucket: bucket,
-      bedrockPolicyStatement: policyStatement
+      bedrockPolicyStatement: policyStatement,
+      apiKey: 'mock-api-key'
     });
 
     template = Template.fromStack(stack);
