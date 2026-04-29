@@ -7,7 +7,7 @@ describe('RecipeBoxStack', () => {
 
   beforeEach(() => {
     const app = new cdk.App();
-    const stack = new RecipeBoxStack(app, 'TestStack');
+    const stack = new RecipeBoxStack(app, 'TestStack', { forceDockerBundling: false });
     template = Template.fromStack(stack);
   });
 
@@ -48,17 +48,17 @@ describe('RecipeBoxStack', () => {
 
     template.hasResourceProperties(lambdaResource, {
       Description: 'GetRecipes',
-      Runtime: 'nodejs20.x'
+      Runtime: 'nodejs22.x'
     });
 
     template.hasResourceProperties(lambdaResource, {
       Description: 'GetRecipe',
-      Runtime: 'nodejs20.x'
+      Runtime: 'nodejs22.x'
     });
 
     template.hasResourceProperties(lambdaResource, {
       Description: 'ModifyRecipe',
-      Runtime: 'nodejs20.x'
+      Runtime: 'nodejs22.x'
     });
   });
 
@@ -112,7 +112,7 @@ describe('RecipeBoxStack', () => {
   it('creates the seed Lambda', () => {
     template.hasResourceProperties('AWS::Lambda::Function', {
       Description: 'SeedHandler',
-      Runtime: 'nodejs20.x',
+      Runtime: 'nodejs22.x',
       Timeout: 300
     });
   });

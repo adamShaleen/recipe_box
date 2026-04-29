@@ -22,14 +22,14 @@ describe('SeedConstruct', () => {
       resources: ['mock-resource']
     });
 
-    new SeedConstruct(stack, 'Seed', { table, faissIndexBucket: bucket, bedrockPolicyStatement });
+    new SeedConstruct(stack, 'Seed', { table, faissIndexBucket: bucket, bedrockPolicyStatement, forceDockerBundling: false });
     template = Template.fromStack(stack);
   });
 
   it('creates the seed Lambda with correct configuration', () => {
     template.hasResourceProperties('AWS::Lambda::Function', {
       Description: 'SeedHandler',
-      Runtime: 'nodejs20.x',
+      Runtime: 'nodejs22.x',
       Timeout: 300
     });
   });

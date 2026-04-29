@@ -14,6 +14,7 @@ interface ApiConstructProps {
   faissIndexBucket: s3.Bucket;
   bedrockPolicyStatement: iam.PolicyStatement;
   bedrockMarketplacePolicyStatement: iam.PolicyStatement;
+  forceDockerBundling?: boolean;
 }
 
 export class ApiConstruct extends Construct {
@@ -27,7 +28,7 @@ export class ApiConstruct extends Construct {
     };
 
     const lambdaDefaults: Partial<lambdaNodejs.NodejsFunctionProps> = {
-      runtime: lambda.Runtime.NODEJS_20_X,
+      runtime: lambda.Runtime.NODEJS_22_X,
       timeout: cdk.Duration.seconds(30),
       memorySize: 512,
       bundling: { externalModules: [] }
@@ -59,7 +60,7 @@ export class ApiConstruct extends Construct {
       memorySize: 1024,
       timeout: cdk.Duration.seconds(60),
       environment: sharedEnv,
-      bundling: { nodeModules: ['faiss-node'], forceDockerBundling: true }
+      bundling: { nodeModules: ['faiss-node'], forceDockerBundling: props.forceDockerBundling ?? true }
     });
 
     props.table.grantReadData(getRecipesHandler);

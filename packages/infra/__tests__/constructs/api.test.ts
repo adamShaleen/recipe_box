@@ -32,7 +32,8 @@ describe('ApiConstruct', () => {
       faissIndexBucket: bucket,
       bedrockPolicyStatement: policyStatement,
       bedrockMarketplacePolicyStatement: marketplacePolicyStatement,
-      apiKey: 'mock-api-key'
+      apiKey: 'mock-api-key',
+      forceDockerBundling: false
     });
 
     template = Template.fromStack(stack);
@@ -43,17 +44,17 @@ describe('ApiConstruct', () => {
 
     template.hasResourceProperties(lambdaResource, {
       Description: 'GetRecipes',
-      Runtime: 'nodejs20.x'
+      Runtime: 'nodejs22.x'
     });
 
     template.hasResourceProperties(lambdaResource, {
       Description: 'GetRecipe',
-      Runtime: 'nodejs20.x'
+      Runtime: 'nodejs22.x'
     });
 
     template.hasResourceProperties(lambdaResource, {
       Description: 'ModifyRecipe',
-      Runtime: 'nodejs20.x'
+      Runtime: 'nodejs22.x'
     });
   });
 

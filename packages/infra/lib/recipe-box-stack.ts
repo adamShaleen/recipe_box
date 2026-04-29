@@ -7,8 +7,12 @@ import { DatabaseConstruct } from './constructs/database';
 import { SeedConstruct } from './constructs/seed';
 import { StorageConstruct } from './constructs/storage';
 
+interface RecipeBoxStackProps extends cdk.StackProps {
+  forceDockerBundling?: boolean;
+}
+
 export class RecipeBoxStack extends cdk.Stack {
-  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
+  constructor(scope: Construct, id: string, props?: RecipeBoxStackProps) {
     super(scope, id, props);
 
     const apiKey = ssm.StringParameter.valueForTypedStringParameterV2(this, '/recipe-box/api-key');
@@ -20,7 +24,8 @@ export class RecipeBoxStack extends cdk.Stack {
     new SeedConstruct(this, 'SeedLambda', {
       table: database.table,
       faissIndexBucket: storage.bucket,
-      bedrockPolicyStatement: bedrock.policyStatement
+      bedrockPolicyStatement: bedrock.policyStatement,
+      forceDockerBundling: props?.forceDockerBundling
     });
 
     new ApiConstruct(this, 'Api', {
@@ -28,7 +33,8 @@ export class RecipeBoxStack extends cdk.Stack {
       faissIndexBucket: storage.bucket,
       bedrockPolicyStatement: bedrock.policyStatement,
       bedrockMarketplacePolicyStatement: bedrock.marketplacePolicyStatement,
-      apiKey
+      apiKey,
+      forceDockerBundling: props?.forceDockerBundling
     });
   }
 }

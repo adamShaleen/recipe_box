@@ -12,6 +12,7 @@ interface SeedConstructProps {
   table: dynamodb.Table;
   faissIndexBucket: s3.Bucket;
   bedrockPolicyStatement: iam.PolicyStatement;
+  forceDockerBundling?: boolean;
 }
 
 export class SeedConstruct extends Construct {
@@ -21,13 +22,13 @@ export class SeedConstruct extends Construct {
     super(scope, id);
 
     this.handler = new lambdaNodejs.NodejsFunction(this, 'SeedHandler', {
-      runtime: lambda.Runtime.NODEJS_20_X,
+      runtime: lambda.Runtime.NODEJS_22_X,
       timeout: cdk.Duration.minutes(5),
       memorySize: 512,
       projectRoot: path.resolve(__dirname, '../../../..'),
       bundling: {
         nodeModules: ['faiss-node'],
-        forceDockerBundling: true,
+        forceDockerBundling: props.forceDockerBundling ?? true,
         commandHooks: {
           beforeBundling: () => [],
           beforeInstall: () => [],
